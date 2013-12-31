@@ -28,14 +28,14 @@ Clone the repo to a machine running some kind of Linux, then `./run_test.sh`
 
 It will then proceed to install (if missing) and use
 [rerun](https://github.com/alexch/rerun/) in order to reload
-`test.sh` each time `dircolors.jellybeans` or `test.sh` is saved.
+`test.sh` each time `dircolors.*` or any `*.sh` is saved.
 
 #### Arguments passed to rerun
 ```bash
-rerun -x -b -p "**/{dircolors.jellybeans,test.sh}" -- ./test.sh
+rerun -x -b -p "**/{dircolors.*,*.sh}" -- ./test/test.sh
 ```
 
-## test.sh
+## test/test.sh
 
 A simple Bash script that generates a bunch of files
 and then lists them using the colors from `dircolors.jellybeans`
