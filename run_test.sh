@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # First install rerun: gem install rerun
 #
 
 function runTest {
-  rerun -x -b -p "**/{dircolors.jellybeans,test.sh}" -- ./test.sh
+  rerun -x -b -p "**/{dircolors.*,*.sh}" -- ./test/test.sh
 }
 
 function installRerun {
