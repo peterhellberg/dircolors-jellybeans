@@ -58,9 +58,12 @@ function createExampleFiles {
 function showExampleDirs {
   for name in "$@"
   do
-    echoBlue "\n## $name"
+    echo -e "\n# $name"
     ls --color $EXAMPLE_DIR/$name
   done
+
+  echo -e "\n# directories"
+  ls --color $EXAMPLE_DIR
 }
 
 function reloadDircolors {
