@@ -25,6 +25,7 @@ This is how I have configured Colors and Text rendering in
 ## Testing
 
 Clone the repo to a machine running some kind of Linux, then `./run_test.sh`
+(You will need bash 4.x installed on your machine)
 
 It will then proceed to install (if missing) and use
 [rerun](https://github.com/alexch/rerun/) in order to reload
