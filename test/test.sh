@@ -6,20 +6,18 @@ SCRIPT_DIR=$(cd $(dirname "$0"); pwd)
 source $SCRIPT_DIR/functions.sh
 source $SCRIPT_DIR/all_colors.sh
 
-#
-# Test setup
-#
-
 EXAMPLE_DIR="/tmp/dircolors-jellybeans"
 
 EXAMPLES=(
+  archive
   code
+  template
+  document
   special
   transient
+  image
   audio
   video
-  image
-  archive
 )
 
 ARCHIVE_FILES=(
@@ -29,11 +27,19 @@ ARCHIVE_FILES=(
 
 CODE_FILES=(
   main.rb main.go main.c main.cpp main.lua
+  Rakefile Gemfile Makefile config.ru
+)
+
+TEMPLATE_FILES=(
+  .erb .html .slim .haml .sass .scss
+)
+
+DOCUMENT_FILES=(
+  LICENSE README readme.txt doc.markdown doc.md doc.nfo data.csv data.txt data.xml data.json data.yml
 )
 
 SPECIAL_FILES=(
-  .torrent .xml .nfo .md .conf .yml
-  Rakefile Gemfile README
+  .torrent .bashrc .conf
 )
 
 TRANSIENT_FILES=(
@@ -74,6 +80,8 @@ reloadDircolors
 
 # Show all example dirs
 showExampleDirs
+
+## DEBUG ############
 
 # Show all 256 colors
 showAllColors

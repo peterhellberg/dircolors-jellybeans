@@ -3,7 +3,6 @@
 function clearScreenWithTime {
   clear
   date
-  echo
 }
 
 function removeExampleDirs {
@@ -49,46 +48,6 @@ function createExampleFiles {
   for file in "${files[@]}"
     do touch $EXAMPLE_DIR/$name/$file
   done
-}
-
-function createSpecialFiles {
-  SPECIAL_DIR=$EXAMPLE_DIR/special
-
-  echoBlue "Creating special files (symlinks, etc)"
-
-  symlinkSpecialFile Gemfile symlink
-  createSpecialDir   DIR
-  createSpecialFile  NORMAL
-  orphanSpecialFile  ORPHAN
-  chmodSpecialFile   SETUID u+s
-  chmodSpecialFile   SETGID g+s
-}
-
-function createSpecialDir {
-  mkdir -p $SPECIAL_DIR/$1
-}
-
-function createSpecialFile {
-  touch $SPECIAL_DIR/$1
-}
-
-function symlinkSpecialFile {
-  ln -sf $SPECIAL_DIR/$1 $SPECIAL_DIR/$2
-}
-
-function orphanSpecialFile {
-  ORPHAN_TARGET=$SPECIAL_DIR/$1_TARGET
-
-  touch $ORPHAN_TARGET
-
-  ln -sf $ORPHAN_TARGET $SPECIAL_DIR/$1
-
-  rm $ORPHAN_TARGET
-}
-
-function chmodSpecialFile {
-  touch $SPECIAL_DIR/$1
-  chmod $2 $SPECIAL_DIR/$1
 }
 
 function reloadDircolors {
@@ -144,3 +103,57 @@ function echoGreen {
 function echoBlue {
   echo -e "$3\e[1;34m$1\e[0m$2"
 }
+
+function createSpecialFiles {
+  SPECIAL_DIR=$EXAMPLE_DIR/special
+
+  echoBlue "Creating special files (symlinks, etc)"
+
+  createSpecialDir   DIR
+  createSpecialFile  NORMAL
+  symlinkSpecialFile NORMAL symlink
+  orphanSpecialFile  ORPHAN
+  chmodSpecialDir    STICKY +t
+  chmodSpecialDir    OTHER_WRITABLE o+w
+  chmodSpecialDir    STICKY_OTHER_WRITABLE +t,o+w
+  chmodSpecialFile   SETUID u+s
+  chmodSpecialFile   SETGID g+s
+  chmodSpecialFile   EXEC +x
+}
+
+function createSpecialDir {
+  mkdir -p $SPECIAL_DIR/$1
+}
+
+function createSpecialFile {
+  touch $SPECIAL_DIR/$1
+}
+
+function symlinkSpecialFile {
+  ln -sf $SPECIAL_DIR/$1 $SPECIAL_DIR/$2
+}
+
+function orphanSpecialFile {
+  ORPHAN_TARGET=$SPECIAL_DIR/$1_TARGET
+
+  touch $ORPHAN_TARGET
+
+  ln -sf $ORPHAN_TARGET $SPECIAL_DIR/$1
+
+  rm $ORPHAN_TARGET
+}
+
+function chmodSpecialDir {
+  mkdir $SPECIAL_DIR/$1
+  chmodSpecial $1 $2
+}
+
+function chmodSpecialFile {
+  touch $SPECIAL_DIR/$1
+  chmodSpecial $1 $2
+}
+
+function chmodSpecial {
+  chmod $2 $SPECIAL_DIR/$1
+}
+
