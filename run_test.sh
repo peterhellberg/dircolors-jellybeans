@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-#
-# First install rerun: gem install rerun
-#
 
-function runTest {
-  rerun -x -b -p "**/{dircolors.*,*.sh}" -- ./test/test.sh
+function onlyRunTestsUnderLinux {
+  if [ "$(expr substr $(uname -s) 1 5)" != "Linux" ]; then
+    echo "Not running under Linux, aborting tests."
+    exit
+  fi
 }
 
 function installRerun {
@@ -19,10 +19,17 @@ function installRerun {
   fi
 }
 
+function runTest {
+  rerun -x -b -p "**/{dircolors.*,*.sh}" -- ./test/test.sh
+}
+
+onlyRunTestsUnderLinux
+
 if which rerun >/dev/null; then
   runTest
 else
   installRerun
-  sleep 5
+
+  sleep 4
   runTest
 fi
