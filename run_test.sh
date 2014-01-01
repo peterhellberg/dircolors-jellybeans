@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 
-function onlyRunTestsUnderLinux {
-  if [ "$(expr substr $(uname -s) 1 5)" != "Linux" ]; then
-    echo "Not running under Linux, aborting tests."
-    exit
-  fi
-}
-
 function installRerun {
   if which gem >/dev/null; then
     install_rerun_cmd="gem install rerun"
@@ -23,7 +16,18 @@ function runTest {
   rerun -x -b -p "**/{dircolors.*,*.sh}" -- ./test/test.sh
 }
 
-onlyRunTestsUnderLinux
+if [ "$(uname -s)" != "Linux" ]; then
+  if ! which gdircolors >/dev/null; then
+    if which brew >/dev/null; then
+      echo "Installing GNU coreutils (gdircolors, gls)"
+
+      brew install coreutils
+    else
+      echo "You must install GNU coreutils"
+      exit
+    fi
+  fi
+fi
 
 if which rerun >/dev/null; then
   runTest

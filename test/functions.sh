@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+if which gdircolors >/dev/null; then
+  CMD_DIRCOLORS=gdircolors
+  CMD_LS=gls
+else
+  CMD_DIRCOLORS=dircolors
+  CMD_LS=ls
+fi
+
 function clearScreenWithTime {
   clear
   date
@@ -28,7 +36,8 @@ function createExampleDirs {
 function createAllExampleFiles {
   for name in "${EXAMPLES[@]}"
   do
-    array="${name^^}_FILES"
+    upper=`echo "$name" | tr '[:lower:]' '[:upper:]'`
+    array="${upper}_FILES"
     subst="$array[@]"
 
     createExampleFiles $name ${!subst}
@@ -56,13 +65,13 @@ function reloadDircolors {
   cat $SCRIPT_DIR/../dircolors.jellybeans \
       $SCRIPT_DIR/dircolors.all_colors > $GENERATED_DIRCOLORS
 
-  echo -e "\nReloading dircolors!  ゜ﾟ･ ヽ(⊙ ‿ ⊙)ノ ･゜ﾟ\n"
+  printf "\nReloading dircolors!  ゜ﾟ･ ヽ(⊙ ‿ ⊙)ノ ･゜ﾟ\n\n"
 
-  eval $(dircolors $GENERATED_DIRCOLORS)
+  eval $($CMD_DIRCOLORS $GENERATED_DIRCOLORS)
 }
 
 function listDir {
-  ls --color -AF $1
+  $CMD_LS --color -AF $1
 }
 
 COLUMNS=`tput cols`
@@ -93,15 +102,15 @@ function showExampleDirs {
 }
 
 function echoRed {
-  echo -e "$3\e[0;31m$1\e[0m$2"
+  printf "$3\e[0;31m$1\e[0m$2\n"
 }
 
 function echoGreen {
-  echo -e "$3\e[0;32m$1\e[0m$2"
+  printf "$3\e[0;32m$1\e[0m$2\n"
 }
 
 function echoBlue {
-  echo -e "$3\e[1;34m$1\e[0m$2"
+  printf "$3\e[1;34m$1\e[0m$2\n"
 }
 
 function createSpecialFiles {
@@ -156,4 +165,3 @@ function chmodSpecialFile {
 function chmodSpecial {
   chmod $2 $SPECIAL_DIR/$1
 }
-
