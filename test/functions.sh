@@ -56,16 +56,48 @@ function createSpecialFiles {
 
   echoBlue "Creating special files (symlinks, etc)"
 
-  ln -sf $SPECIAL_DIR/Gemfile $SPECIAL_DIR/symlink
+  symlinkSpecialFile Gemfile symlink
+  createSpecialDir   DIR
+  createSpecialFile  NORMAL
+  orphanSpecialFile  ORPHAN
+  chmodSpecialFile   SETUID u+s
+  chmodSpecialFile   SETGID g+s
+}
+
+function createSpecialDir {
+  mkdir -p $SPECIAL_DIR/$1
+}
+
+function createSpecialFile {
+  touch $SPECIAL_DIR/$1
+}
+
+function symlinkSpecialFile {
+  ln -sf $SPECIAL_DIR/$1 $SPECIAL_DIR/$2
+}
+
+function orphanSpecialFile {
+  ORPHAN_TARGET=$SPECIAL_DIR/$1_TARGET
+
+  touch $ORPHAN_TARGET
+
+  ln -sf $ORPHAN_TARGET $SPECIAL_DIR/$1
+
+  rm $ORPHAN_TARGET
+}
+
+function chmodSpecialFile {
+  touch $SPECIAL_DIR/$1
+  chmod $2 $SPECIAL_DIR/$1
 }
 
 function reloadDircolors {
-  echo -e "\nReloading dircolors!  ゜ﾟ･ ヽ(⊙ ‿ ⊙)ノ ･゜ﾟ\n"
-
-  GENERATED_DIRCOLORS=$EXAMPLE_DIR/dircolors.generated
+  GENERATED_DIRCOLORS=$EXAMPLE_DIR.generated
 
   cat $SCRIPT_DIR/../dircolors.jellybeans \
       $SCRIPT_DIR/dircolors.all_colors > $GENERATED_DIRCOLORS
+
+  echo -e "\nReloading dircolors!  ゜ﾟ･ ヽ(⊙ ‿ ⊙)ノ ･゜ﾟ\n"
 
   eval $(dircolors $GENERATED_DIRCOLORS)
 }
@@ -96,12 +128,9 @@ function showRealDir {
 }
 
 function showExampleDirs {
-  for name in "$@"
+  for name in "${EXAMPLES[@]}"
     do showDir $name
   done
-
-  showDir "directories" $EXAMPLE_DIR
-  echo
 }
 
 function echoRed {
