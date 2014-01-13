@@ -42,11 +42,11 @@ FILE 00
 RESET 0
 
 # Directory
-DIR 00;38;5;111
+DIR 0;38;5;3
 
 # Symbolic link. (If you set this to 'target' instead of a
 # numerical value, the color is as for the file pointed to.)
-LINK 01;38;5;009
+LINK 01;38;5;111
 
 # Regular file with more than one link
 MULTIHARDLINK 00
@@ -85,7 +85,7 @@ OTHER_WRITABLE 38;5;110
 STICKY_OTHER_WRITABLE 48;5;64;38;5;230
 
 # This is for files with execute permission:
-EXEC 01;38;5;112
+EXEC 0;38;5;2
 
 # Code
 .c               01;38;5;148
@@ -94,6 +94,7 @@ EXEC 01;38;5;112
 .rb              01;38;5;160
 .ru              01;38;5;088
 .lua             01;38;5;025
+.sh              01;38;5;067
 
 *Makefile        01;38;5;208
 *Rakefile        01;38;5;208
@@ -111,10 +112,10 @@ EXEC 01;38;5;112
 .json            01;38;5;054
 .yml             01;38;5;054
 .xml             01;38;5;054
-.txt             01;38;5;054
 .csv             01;38;5;054
 
 # Documents
+.txt             01;38;5;176
 .tex             01;38;5;176
 .rdf             01;38;5;176
 .nfo             01;38;5;176
@@ -126,7 +127,7 @@ EXEC 01;38;5;112
 *LICENSE         01;38;5;165
 
 # Files of special interest
-.torrent         00;38;5;011
+.torrent         00;38;5;120
 *rc              01;38;5;141
 .cfg             01;38;5;005
 .conf            01;38;5;005
