@@ -42,7 +42,7 @@ FILE 00
 RESET 0
 
 # Directory
-DIR 0;38;5;3
+DIR 0;38;5;4
 
 # Symbolic link. (If you set this to 'target' instead of a
 # numerical value, the color is as for the file pointed to.)
@@ -91,14 +91,16 @@ EXEC 0;38;5;2
 .c               01;38;5;148
 .cpp             01;38;5;064
 .go              01;38;5;081
-.rb              01;38;5;160
+.rb              00;38;5;075
 .ru              01;38;5;088
 .lua             01;38;5;025
 .sh              01;38;5;067
 
-*Makefile        01;38;5;208
-*Rakefile        01;38;5;208
-*Gemfile         01;38;5;208
+*Makefile        0;38;5;3
+*Rakefile        0;38;5;3
+*Gemfile         0;38;5;3
+*Gemfile.lock    0;38;5;239
+.gemspec         0;38;5;3
 
 # Templates
 .erb             01;38;5;010
