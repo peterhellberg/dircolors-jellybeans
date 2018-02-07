@@ -35,7 +35,7 @@ TEMPLATE_FILES=(
 )
 
 DOCUMENT_FILES=(
-  LICENSE README readme.txt doc.markdown doc.md doc.nfo data.csv data.txt data.xml data.json data.yml
+  LICENSE README readme.txt doc.markdown doc.md doc.nfo data.csv doc.txt data.xml data.json data.yml
 )
 
 SPECIAL_FILES=(
