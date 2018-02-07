@@ -88,7 +88,9 @@ STICKY_OTHER_WRITABLE 48;5;64;38;5;230
 EXEC 0;38;5;154
 
 # Code
+.s               01;38;5;123
 .c               01;38;5;148
+.h               01;38;5;150
 .cpp             01;38;5;064
 .go              01;38;5;081
 *_test.go        01;38;5;025
@@ -98,14 +100,16 @@ EXEC 0;38;5;154
 .js              01;38;5;003
 .sh              01;38;5;067
 
-*Makefile        0;38;5;3
-*Rakefile        0;38;5;3
+*Makefile        0;38;5;243
+*Rakefile        0;38;5;124
 *Gemfile         0;38;5;3
 *Gemfile.lock    0;38;5;239
 .gemspec         0;38;5;3
 *Procfile        0;38;5;244
 *Gopkg.toml      0;38;5;3
 *Gopkg.lock      0;38;5;239
+.gitignore       0;38;5;243
+.gitattributes   0;38;5;243
 
 # Templates
 .erb             01;38;5;012
@@ -116,27 +120,39 @@ EXEC 0;38;5;154
 .scss            01;38;5;012
 
 # Data
-.json            01;38;5;60
-.ndjson          01;38;5;60
-.ldjson          01;38;5;60
-.yml             01;38;5;60
-.xml             01;38;5;60
-.csv             01;38;5;60
+.json            01;38;5;3
+.ndjson          01;38;5;3
+.ldjson          01;38;5;3
+.yml             01;38;5;3
+.yaml            01;38;5;3
+.xml             01;38;5;3
+.csv             01;38;5;3
+
+# Binary serialization formats
+.pb              01;38;5;201
+.proto           01;38;5;201
+.bson            01;38;5;201
 
 # Documents
-.txt             01;38;5;247
-.tex             01;38;5;247
-.rdf             01;38;5;247
-.nfo             01;38;5;247
-.docx            01;38;5;247
-.pdf             01;38;5;247
-.markdown        01;38;5;205
-.md              01;38;5;205
+.txt             01;38;5;15
+.tex             01;38;5;15
+.nfo             01;38;5;5
+.rdf             01;38;5;5
+.docx            01;38;5;5
+.pdf             01;38;5;5
+.markdown        01;38;5;5
+.md              01;38;5;5
 *README          01;38;5;200
 *README.md       01;38;5;200
 *README.txt      01;38;5;200
 *readme.txt      01;38;5;200
 *LICENSE         01;38;5;165
+*LICENSE.txt     01;38;5;165
+*AUTHORS         01;38;5;165
+*COPYRIGHT       01;38;5;165
+*CONTRIBUTORS    01;38;5;165
+*CONTRIBUTING.md 01;38;5;165
+*PATENTS         01;38;5;165
 
 # Files of special interest
 .torrent         00;38;5;120
@@ -161,6 +177,7 @@ EXEC 0;38;5;154
 .pyc             00;38;5;239
 .class           00;38;5;239
 .cache           00;38;5;239
+.rdb             00;38;5;239
 
 # Audio formats (orange)
 .aac             00;38;5;166
