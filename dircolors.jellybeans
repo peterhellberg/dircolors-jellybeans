@@ -116,12 +116,12 @@ EXEC 0;38;5;154
 .scss            01;38;5;012
 
 # Data
-.json            01;38;5;209
-.ndjson          01;38;5;209
-.ldjson          01;38;5;209
-.yml             01;38;5;209
-.xml             01;38;5;209
-.csv             01;38;5;209
+.json            01;38;5;60
+.ndjson          01;38;5;60
+.ldjson          01;38;5;60
+.yml             01;38;5;60
+.xml             01;38;5;60
+.csv             01;38;5;60
 
 # Documents
 .txt             01;38;5;247
@@ -129,12 +129,13 @@ EXEC 0;38;5;154
 .rdf             01;38;5;247
 .nfo             01;38;5;247
 .docx            01;38;5;247
-.pdf             01;38;5;003
-.markdown        01;38;5;003
-.md              01;38;5;003
-*README          01;38;5;003
-*README.txt      01;38;5;003
-*readme.txt      01;38;5;003
+.pdf             01;38;5;247
+.markdown        01;38;5;205
+.md              01;38;5;205
+*README          01;38;5;200
+*README.md       01;38;5;200
+*README.txt      01;38;5;200
+*readme.txt      01;38;5;200
 *LICENSE         01;38;5;165
 
 # Files of special interest
