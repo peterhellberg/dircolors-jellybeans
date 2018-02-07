@@ -42,7 +42,7 @@ FILE 00
 RESET 0
 
 # Directory
-DIR 0;38;5;4
+DIR 0;38;5;2
 
 # Symbolic link. (If you set this to 'target' instead of a
 # numerical value, the color is as for the file pointed to.)
@@ -85,16 +85,17 @@ OTHER_WRITABLE 38;5;110
 STICKY_OTHER_WRITABLE 48;5;64;38;5;230
 
 # This is for files with execute permission:
-EXEC 0;38;5;2
+EXEC 0;38;5;154
 
 # Code
 .c               01;38;5;148
 .cpp             01;38;5;064
 .go              01;38;5;081
 *_test.go        01;38;5;025
-.rb              00;38;5;009
+.rb              00;38;5;160
 .ru              01;38;5;088
 .lua             01;38;5;025
+.js              01;38;5;003
 .sh              01;38;5;067
 
 *Makefile        0;38;5;3
@@ -107,29 +108,33 @@ EXEC 0;38;5;2
 *Gopkg.lock      0;38;5;239
 
 # Templates
-.erb             01;38;5;010
-.html            01;38;5;010
-.slim            01;38;5;010
-.haml            01;38;5;010
-.sass            01;38;5;010
-.scss            01;38;5;010
+.erb             01;38;5;012
+.html            01;38;5;012
+.slim            01;38;5;012
+.haml            01;38;5;012
+.sass            01;38;5;012
+.scss            01;38;5;012
 
 # Data
-.json            01;38;5;154
-.yml             01;38;5;154
-.xml             01;38;5;154
-.csv             01;38;5;154
+.json            01;38;5;209
+.ndjson          01;38;5;209
+.ldjson          01;38;5;209
+.yml             01;38;5;209
+.xml             01;38;5;209
+.csv             01;38;5;209
 
 # Documents
-.txt             01;38;5;176
-.tex             01;38;5;176
-.rdf             01;38;5;176
-.nfo             01;38;5;176
+.txt             01;38;5;247
+.tex             01;38;5;247
+.rdf             01;38;5;247
+.nfo             01;38;5;247
+.docx            01;38;5;247
+.pdf             01;38;5;003
 .markdown        01;38;5;003
 .md              01;38;5;003
-*README          01;38;5;176
-*README.txt      01;38;5;176
-*readme.txt      01;38;5;176
+*README          01;38;5;003
+*README.txt      01;38;5;003
+*readme.txt      01;38;5;003
 *LICENSE         01;38;5;165
 
 # Files of special interest
@@ -208,7 +213,9 @@ EXEC 0;38;5;2
 .xpm             00;38;5;215
 .tif             00;38;5;215
 .tiff            00;38;5;215
+.pxm             00;38;5;215
 .png             00;38;5;215
+.PNG             00;38;5;215
 .svg             00;38;5;215
 .svgz            00;38;5;215
 .mng             00;38;5;215
@@ -222,6 +229,10 @@ EXEC 0;38;5;2
 .eps             00;38;5;215
 .CR2             00;38;5;215
 .ico             00;38;5;215
+
+# Disk images
+.iso             01;38;5;209
+.dmg             01;38;5;209
 
 # Archives or compressed (violet)
 .zip             01;38;5;61
