@@ -67,7 +67,7 @@ CHR ;1;230;38;5;94;01
 ORPHAN 38;5;009;48;5;052
 
 # File that is setuid (u+s)
-SETUID 48;5;160;38;5;230 
+SETUID 48;5;160;38;5;230
 
 # File that is setgid (g+s)
 SETGID 48;5;136;38;5;230
@@ -76,7 +76,7 @@ SETGID 48;5;136;38;5;230
 CAPABILITY 30;41
 
 # Dir with the sticky bit set (+t) and not other-writable
-STICKY 48;5;33;38;5;230 
+STICKY 48;5;33;38;5;230
 
 # Dir that is other-writable (o+w) and not sticky
 OTHER_WRITABLE 38;5;110
@@ -140,6 +140,8 @@ EXEC 0;38;5;154
 .rdf             01;38;5;5
 .docx            01;38;5;5
 .pdf             01;38;5;5
+.djvu            01;38;5;5
+.epub            01;38;5;5
 .markdown        01;38;5;5
 .md              01;38;5;5
 *README          01;38;5;200
@@ -250,6 +252,7 @@ EXEC 0;38;5;154
 
 # Disk images
 .iso             01;38;5;209
+.img             01;38;5;209
 .dmg             01;38;5;209
 
 # Archives or compressed (violet)
