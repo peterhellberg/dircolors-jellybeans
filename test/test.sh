@@ -6,7 +6,7 @@ SCRIPT_DIR=$(cd $(dirname "$0"); pwd)
 source $SCRIPT_DIR/functions.sh
 source $SCRIPT_DIR/all_colors.sh
 
-EXAMPLE_DIR="/tmp/dircolors-jellybeans"
+EXAMPLE_DIR="/tmp/dircolors-material"
 
 EXAMPLES=(
   archive
