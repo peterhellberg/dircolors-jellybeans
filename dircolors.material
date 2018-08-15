@@ -39,16 +39,16 @@ TERM xterm*
 # 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
 # Background color codes:
 # 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
-#NORMAL 00 # no color code at all
-#FILE 00 # regular file: use no color at all
+NORMAL 00 # no color code at all
+FILE 00 # regular file: use no color at all
 RESET 0 # reset to "normal" color
 DIR 01;34 # directory
 LINK target # symbolic link. (If you set this to 'target' instead of a
  # numerical value, the color is as for the file pointed to.)
 MULTIHARDLINK 00 # regular file with more than one link
 FIFO 40;33 # pipe
-SOCK 01;35 # socket
-DOOR 01;35 # door
+SOCK 00;35 # socket
+DOOR 00;35 # door
 BLK 40;33;01 # block device driver
 CHR 40;33;01 # character device driver
 ORPHAN 40;31;01 # symlink to nonexistent file, or non-stat'able file ...
@@ -60,119 +60,126 @@ STICKY_OTHER_WRITABLE 30;42 # dir that is sticky and other-writable (+t,o+w)
 OTHER_WRITABLE 34;42 # dir that is other-writable (o+w) and not sticky
 STICKY 37;44 # dir with the sticky bit set (+t) and not other-writable
 # This is for files with execute permission:
-EXEC 01;32
+EXEC 00;32
 # List any file extensions like '.gz' or '.tar' that you would like ls
 # to colorize below. Put the extension, a space, and the color init string.
 # (and any comments you want to add after a '#')
+
 # If you use DOS-style suffixes, you may want to uncomment the following:
-#.cmd 01;32 # executables (bright green)
-#.exe 01;32
-#.com 01;32
-#.btm 01;32
-#.bat 01;32
-# Or if you want to colorize scripts even if they do not have the
-# executable bit actually set.
-#.sh 01;32
-#.csh 01;32
+.cmd 00;32 # executables (bright green)
+.exe 00;32
+.com 00;32
+.btm 00;32
+.bat 00;32
+.sh 00;32
+.csh 00;32
+
  # archives or compressed (bright red)
-.tar 01;31
-.tgz 01;31
-.arc 01;31
-.arj 01;31
-.taz 01;31
-.lha 01;31
-.lz4 01;31
-.lzh 01;31
-.lzma 01;31
-.tlz 01;31
-.txz 01;31
-.tzo 01;31
-.t7z 01;31
-.zip 01;31
-.z 01;31
-.Z 01;31
-.dz 01;31
-.gz 01;31
-.lrz 01;31
-.lz 01;31
-.lzo 01;31
-.xz 01;31
-.zst 01;31
-.tzst 01;31
-.bz2 01;31
-.bz 01;31
-.tbz 01;31
-.tbz2 01;31
-.tz 01;31
-.deb 01;31
-.rpm 01;31
-.jar 01;31
-.war 01;31
-.ear 01;31
-.sar 01;31
-.rar 01;31
-.alz 01;31
-.ace 01;31
-.zoo 01;31
-.cpio 01;31
-.7z 01;31
-.rz 01;31
-.cab 01;31
-.wim 01;31
-.swm 01;31
-.dwm 01;31
-.esd 01;31
+.tar 00;31
+.tgz 00;31
+.arc 00;31
+.arj 00;31
+.taz 00;31
+.lha 00;31
+.lz4 00;31
+.lzh 00;31
+.lzma 00;31
+.tlz 00;31
+.txz 00;31
+.tzo 00;31
+.t7z 00;31
+.zip 00;31
+.z 00;31
+.Z 00;31
+.dz 00;31
+.gz 00;31
+.lrz 00;31
+.lz 00;31
+.lzo 00;31
+.xz 00;31
+.zst 00;31
+.tzst 00;31
+.bz2 00;31
+.bz 00;31
+.tbz 00;31
+.tbz2 00;31
+.tz 00;31
+.deb 00;31
+.rpm 00;31
+.jar 00;31
+.war 00;31
+.ear 00;31
+.sar 00;31
+.rar 00;31
+.alz 00;31
+.ace 00;31
+.zoo 00;31
+.cpio 00;31
+.7z 00;31
+.rz 00;31
+.cab 00;31
+.wim 00;31
+.swm 00;31
+.dwm 00;31
+.esd 00;31
+.apk 00;31
+.gem 00;31
+
 # image formats
-.jpg 01;35
-.jpeg 01;35
-.mjpg 01;35
-.mjpeg 01;35
-.gif 01;35
-.bmp 01;35
-.pbm 01;35
-.pgm 01;35
-.ppm 01;35
-.tga 01;35
-.xbm 01;35
-.xpm 01;35
-.tif 01;35
-.tiff 01;35
-.png 01;35
-.svg 01;35
-.svgz 01;35
-.mng 01;35
-.pcx 01;35
-.mov 01;35
-.mpg 01;35
-.mpeg 01;35
-.m2v 01;35
-.mkv 01;35
-.webm 01;35
-.ogm 01;35
-.mp4 01;35
-.m4v 01;35
-.mp4v 01;35
-.vob 01;35
-.qt 01;35
-.nuv 01;35
-.wmv 01;35
-.asf 01;35
-.rm 01;35
-.rmvb 01;35
-.flc 01;35
-.avi 01;35
-.fli 01;35
-.flv 01;35
-.gl 01;35
-.dl 01;35
-.xcf 01;35
-.xwd 01;35
-.yuv 01;35
-.cgm 01;35
-.emf 01;35
-# https://wiki.xiph.org/MIME_Types_and_File_Extensions
-.ogv 01;35
-.ogx 01;35
+.jpg 00;35
+.jpeg 00;35
+.mjpg 00;35
+.mjpeg 00;35
+.gif 00;35
+.bmp 00;35
+.pbm 00;35
+.pgm 00;35
+.ppm 00;35
+.tga 00;35
+.xbm 00;35
+.xpm 00;35
+.tif 00;35
+.tiff 00;35
+.png 00;35
+.svg 00;35
+.svgz 00;35
+.mng 00;35
+.pcx 00;35
+.ico 00;35
+.eps 00;35
+
+# video formats
+.mov 00;34
+.mpg 00;34
+.mpeg 00;34
+.m2v 00;34
+.mkv 00;34
+.webm 00;34
+.ogm 00;34
+.mp4 00;34
+.m4v 00;34
+.mp4v 00;34
+.vob 00;34
+.qt 00;34
+.nuv 00;34
+.wmv 00;34
+.asf 00;34
+.rm 00;34
+.rmvb 00;34
+.flc 00;34
+.avi 00;34
+.fli 00;34
+.flv 00;34
+.gl 00;34
+.dl 00;34
+.xcf 00;34
+.xwd 00;34
+.yuv 00;34
+.cgm 00;34
+.emf 00;34
+.ogv 00;34
+.ogx 00;34
+
 # audio formats
 .aac 00;36
 .au 00;36
@@ -186,8 +193,56 @@ EXEC 01;32
 .ogg 00;36
 .ra 00;36
 .wav 00;36
-# https://wiki.xiph.org/MIME_Types_and_File_Extensions
 .oga 00;36
 .opus 00;36
 .spx 00;36
 .xspf 00;36
+
+# document formats
+.doc 00;36
+.docx 00;36
+.ppt 00;36
+.pptx 00;36
+.pdf 00;36
+.djvu 00;36
+.epub 00;36
+
+## source formats
+
+# compilable
+.c 00;35
+.h 00;35
+.cpp 00;35
+.go 00;35
+.rs 00;35
+.java 00;35
+
+# intrpretable
+.py 00;36
+.rb 00;36
+.py 00;36
+
+# scripts
+.js 00;31
+.jsx 00;31
+.ts 00;31
+.tsx 00;31
+.coffee 00;31
+
+# styles
+.css 00;32
+.sss 00;32
+.less 00;32
+.scss 00;32
+.sass 00;32
+
+# templates
+.html 00;33
+.haml 00;33
+.erb 00;33
+
+# data
+.csv 00;34
+.json 00;34
+.yml 00;34
+.yaml 00;34
