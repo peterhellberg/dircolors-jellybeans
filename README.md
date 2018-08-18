@@ -1,26 +1,21 @@
-dircolors-jellybeans
+dircolors-material
 ====================
 
-Dircolors suitable for use with
-[jellybeans.vim](https://github.com/nanotech/jellybeans.vim)
+Dircolors material theme
 
 ## Installation
 
-Download the latest
-[dircolors.jellybeans](https://raw.github.com/peterhellberg/dircolors-jellybeans/master/dircolors.jellybeans)
+1. Download the latest
+[dircolors.material](https://raw.github.com/zpm-zsh/dircolors-material/master/dircolors.material)
 and put it in `$HOME/.dircolors` (which under Ubuntu will be loaded on login,
 probably true for other distros as well)
 
-## iTerm2 Configuration
+2. Or use your zsh package manager, like [zpm](https://github.com/zpm-zsh/zpm): `zpm load zpm-zsh/dircolors-material`
 
-This is how I have configured Colors and Text rendering in
-[iTerm2](http://www.iterm2.com/)
+## Terminal emulator configuration
 
-### Colors
-![Colors](http://assets.c7.se/skitch/iterm2_colors-131231.png)
+For terminal emulator you need to use any material theme, example of used colors you cau see in `Material.json`, this file is a theme for Tilix
 
-### Text rendering
-![Text rendering](http://assets.c7.se/skitch/iterm2_text_rendering-131231.png)
 
 ## Testing
 
@@ -41,4 +36,4 @@ rerun -x -b -p "**/{dircolors.*,*.sh}" -- ./test/test.sh
 A simple Bash script that generates a bunch of files
 and then lists them using the colors from `dircolors.jellybeans`
 
-![Test output](http://assets.c7.se/skitch/run_test.sh-20140101-014450.png)
+![Test output](./screenshot.png)
