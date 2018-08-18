@@ -73,6 +73,7 @@ EXEC 00;32
 .bat 00;32
 .sh 00;32
 .csh 00;32
+.zsh 00;32
 
  # archives or compressed (bright red)
 .tar 00;31
@@ -207,6 +208,14 @@ EXEC 00;32
 .djvu 00;36
 .epub 00;36
 
+# other
+.log 01;30
+.zwc 01;30
+.log 01;30
+
+
+
+
 ## source formats
 
 # compilable
@@ -240,6 +249,7 @@ EXEC 00;32
 .html 00;33
 .haml 00;33
 .erb 00;33
+.md 00;33
 
 # data
 .csv 00;34
