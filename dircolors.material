@@ -229,6 +229,7 @@ EXEC 00;32
 # intrpretable
 .py 00;36
 .rb 00;36
+.ru 00;36
 .py 00;36
 
 # scripts
@@ -248,11 +249,20 @@ EXEC 00;32
 # templates
 .html 00;33
 .haml 00;33
+.slim 00;33
 .erb 00;33
-.md 00;33
 
 # data
 .csv 00;34
 .json 00;34
 .yml 00;34
 .yaml 00;34
+.xml 00;34
+.md 00;34
+.markdown 00;34
+
+# packages
+
+*package.json 00;35
+*Gemfile 00;35
+*Makefile 00;35
