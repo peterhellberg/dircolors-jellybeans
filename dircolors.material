@@ -231,6 +231,7 @@ EXEC 00;32
 .rb 00;36
 .ru 00;36
 .py 00;36
+.lua 00;36
 
 # scripts
 .js 00;31
@@ -265,4 +266,5 @@ EXEC 00;32
 
 *package.json 00;35
 *Gemfile 00;35
+*Rakefile 00;35
 *Makefile 00;35
