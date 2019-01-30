@@ -105,7 +105,7 @@ EXEC 00;32
 .csh 00;32
 .zsh 00;32
 
- # archives or compressed (bright red)
+ # archives or compressed
 .tar 00;31
 .tgz 00;31
 .arc 00;31
@@ -239,10 +239,10 @@ EXEC 00;32
 .epub 00;36
 
 # other
-.log 01;30
-.zwc 01;30
-.log 01;30
-
+.log  01;30
+.zwc  01;30
+.log  01;30
+.lock 01;30
 
 
 
