@@ -17,10 +17,10 @@ This is how I have configured Colors and Text rendering in
 [iTerm2](http://www.iterm2.com/)
 
 ### Colors
-![Colors](http://assets.c7.se/skitch/iterm2_colors-131231.png)
+![Colors](https://assets.c7.se/skitch/iterm2_colors-131231.png)
 
 ### Text rendering
-![Text rendering](http://assets.c7.se/skitch/iterm2_text_rendering-131231.png)
+![Text rendering](https://assets.c7.se/skitch/iterm2_text_rendering-131231.png)
 
 ## Testing
 
@@ -41,4 +41,4 @@ rerun -x -b -p "**/{dircolors.*,*.sh}" -- ./test/test.sh
 A simple Bash script that generates a bunch of files
 and then lists them using the colors from `dircolors.jellybeans`
 
-![Test output](http://assets.c7.se/skitch/run_test.sh-20140101-014450.png)
+![Test output](https://assets.c7.se/skitch/run_test.sh-20140101-014450.png)
