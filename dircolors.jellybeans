@@ -42,7 +42,7 @@ FILE 00
 RESET 0
 
 # Directory
-DIR 0;38;5;2
+DIR 1;38;5;4
 
 # Symbolic link. (If you set this to 'target' instead of a
 # numerical value, the color is as for the file pointed to.)
@@ -85,7 +85,7 @@ OTHER_WRITABLE 38;5;110
 STICKY_OTHER_WRITABLE 48;5;64;38;5;230
 
 # This is for files with execute permission:
-EXEC 0;38;5;154
+EXEC 1;38;5;2
 
 # Code
 .s               01;38;5;123
@@ -99,6 +99,8 @@ EXEC 0;38;5;154
 .lua             01;38;5;025
 .js              01;38;5;003
 .sh              01;38;5;067
+.zig             00;38;5;214
+.wasmp           01;38;5;064
 
 *Makefile        0;38;5;243
 *Rakefile        0;38;5;124
