@@ -26,8 +26,8 @@ ARCHIVE_FILES=(
 )
 
 CODE_FILES=(
-  main.rb main.go main.c main.cpp main.lua
-  Rakefile Gemfile Makefile config.ru
+  main.rb main.go main.c main.cpp main.lua main.zig
+  Rakefile Gemfile Makefile config.ru cart.wasmp
 )
 
 TEMPLATE_FILES=(
