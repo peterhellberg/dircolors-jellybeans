@@ -26,7 +26,7 @@ ARCHIVE_FILES=(
 )
 
 CODE_FILES=(
-  main.rb main.go main.c main.cpp main.lua main.zig
+  main.rb main.go main.c main.cpp main.lua main.zig build.zig.zon
   Rakefile Gemfile Makefile config.ru cart.wasmp
 )
 
